@@ -298,6 +298,7 @@ class PyBuildExt(build_ext):
         lib_dirs = self.compiler.library_dirs + [
             '/lib64', '/usr/lib64',
             '/lib', '/usr/lib',
+            '/usr/lib/x86_64-linux-gnu',
             ]
         inc_dirs = self.compiler.include_dirs + ['/usr/include']
         exts = []
