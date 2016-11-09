@@ -570,7 +570,7 @@ class PyBuildExt(build_ext):
 
         #print 'openssl_ver = 0x%08x' % openssl_ver
 
-        if (ssl_incs is not None and
+        if (False and ssl_incs is not None and
             ssl_libs is not None and
             openssl_ver >= 0x00907000):
             # The _hashlib module wraps optimized implementations
@@ -589,7 +589,7 @@ class PyBuildExt(build_ext):
                             sources = ['md5module.c', 'md5.c'],
                             depends = ['md5.h']) )
 
-        if (openssl_ver < 0x00908000):
+        if True:
             # OpenSSL doesn't do these until 0.9.8 so we'll bring our own hash
             exts.append( Extension('_sha256', ['sha256module.c']) )
             exts.append( Extension('_sha512', ['sha512module.c']) )
